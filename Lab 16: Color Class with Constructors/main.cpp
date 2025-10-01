@@ -19,6 +19,10 @@ private: //declare private variables red,green, blue
     int green;
     int blue;
 public:
+    Color() {red = 0; green = 0; blue = 0;} //default constructor
+    Color(int x) {red = x; green = 0; blue = 0;} //partial constructor
+    Color(int x, int y) {red = x; green = y; blue = 0;} //partial constructor
+    Color(int x, int y, int z) {red = x; green = y; blue = z;} //full parameter constructor
     //setter functions
     void setRed(int r) {red = r;}
     void setGreen(int g) {green = g;}
@@ -41,33 +45,15 @@ public:
 int main(int argc, const char * argv[]) {
     //create Color objects with data
     Color one;
-    one.setRed(155);
-    one.setBlue(200);
-    one.setGreen(100);
-    one.print(1);
+    Color two(155);
+    Color three(255,10);
+    Color four(60,70,195);
     
-    Color two;
-    two.setRed(25);
-    two.setBlue(230);
-    two.setGreen(180);
+    //printing Color objects
+    one.print(1);
     two.print(2);
-
-    Color three;
-    three.setRed(255);
-    three.setBlue(10);
-    three.setGreen(80);
     three.print(3);
-
-    Color four;
-    four.setRed(60);
-    four.setBlue(70);
-    four.setGreen(195);
     four.print(4);
     
-    Color five;
-    five.setRed(145);
-    five.setBlue(225);
-    five.setGreen(250);
-    five.print(5);
-
+    return 0;
 }
